@@ -7,12 +7,19 @@ This collector charts the following [curl reported metrics](https://curl.se/docs
 - time_total
 
 # Install
-Copy files to the following folders:  
+1. Copy files to the following folders:  
  - curl_request.chart.py -> /usr/libexec/netdata/python.d/
  - curl_request.conf  -> /etc/netdata/python.d/  
 
-Add your desired job urls to the configuration file.  
-Restart netdata: `sudo systemctl status  netdata`
+2. Add your desired job urls to the configuration file.  
+3. If relevant, enable python.d plugin in netdata configuration (/etc/netdata/netdata.conf):
+```
+[plugins]
+        . . .
+         python.d = yes
+        . . .
+```
+4. Restart netdata: `sudo systemctl status  netdata`
 
 # Troubleshoot
 ```sh
